@@ -12,3 +12,4 @@ if [ ! -d "godot-for-ouya-compile-automation" ]; then git clone https://github.c
 cd godot-for-ouya-compile-automation
 cd compile-on-mac
 ./build-for-macos.sh
+./build-for-android.sh

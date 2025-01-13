@@ -1,5 +1,5 @@
 #!/bin/zsh
-cd $HOME/git/godot-for-ouya
+export BUILD_REVISION="OUYA"
 
 # Get logic core count
 threads=$(sysctl -n hw.logicalcpu)
@@ -11,6 +11,8 @@ elif [ $compile_cores -gt 1 ]; then
 fi
 
 # Build the editor for macOS
+cd $HOME/git/godot-for-ouya
+
 scons platform=osx target=release_debug bits=64 -j$compile_cores
 
 cp -r misc/dist/osx_tools.app ./godot-for-ouya.app
